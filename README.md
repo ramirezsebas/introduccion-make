@@ -23,12 +23,20 @@ Un makefile es un archivo que indica un conjunto de reglas.
 
 Creamos un archivo makefile.
 Su formato es:
-```
-//COMPLETO SON REGLAS
-//El Objetivo es lo que queremos hacer.
-//Las Dependencias son los archivos que se necesita para poder realizar el objetivo.
-//Las Instrucciones: Serie de comandos que se determina.
+```makefile
+# COMPLETO SON REGLAS
+# El Objetivo es lo que queremos hacer.
+# Las Dependencias son los archivos que se necesita para poder realizar el objetivo.
+# Las Instrucciones: Serie de comandos que se determina.
 
 objetivo: dependencias
-          instrucciones
+    instruccion
+```
+
+Para utilizar una variable solo debemos:
+```makefile
+OBJS = main.o algo.o
+
+programa: $(OBJS)
+    gcc -o programa *.o
 ```
